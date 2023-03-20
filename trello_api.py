@@ -99,13 +99,13 @@ def get_user_actions(reversedTrelloMap: dict):
                     commentCreator = comment.get('idMemberCreator')
                     if reversedTrelloMap.get(commentCreator):
                         reversedTrelloMap[commentCreator]['commentsCreated'] += 1
-            index += 1
-            if (index >= 5):
-                break
+            # index += 1
+            # if (index >= 5):
+            #     break
     # trelloMap = files.reverseMap(reversedTrelloMap)
     trelloMap = {}
     for value in reversedTrelloMap.values():
         trelloMap[value['name']] = {'cardsCreated': value['cardsCreated'], 'commentsCreated': value['commentsCreated']}
-    print(trelloMap)
+    return trelloMap
             
 # get_user_actions()
